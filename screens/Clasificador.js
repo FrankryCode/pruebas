@@ -4,7 +4,7 @@ import {Text, View, StyleSheet, Button, TextInput} from "react-native";
 
 const Clasificador = () => {
     const [llamada, setLlamada] = useState('')
-    const [calor, setValor]=useState('')
+    const [valor, setValor]=useState('')
     const [result, setResult] = useState('')
 
     const getResultFromClasificar = async () => {
@@ -13,7 +13,7 @@ const Clasificador = () => {
         console.log("JSON to send:", JSON.stringify(dataToSend, null, 2));
   
   
-        const response = await fetch("http://192.168.100.105:80/clasificar", {
+        const response = await fetch("http://10.116.1.222:80/clasificar", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -36,8 +36,9 @@ const Clasificador = () => {
         <Text style={styles.text}>
         {"Ingrese el texto que desea conocer la clasificacion"}
         </Text>
-        <TextInput style={styles.input} value={valor} onChangeText={setValor} />
+        
         <TextInput style={styles.input} value={llamada} onChangeText={setLlamada} />
+        <TextInput style={styles.input} value={valor} onChangeText={setValor} />
         <Button title={"Enviar"} onPress={getResultFromClasificar} />
         <Text style={styles.text}>{result}</Text>
       </View>

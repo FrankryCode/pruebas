@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import { useEffect, useState } from 'react';
 import SplashScreen from './screens/SplashScreen'
+import Clasificador from './screens/Clasificador';
 
 export default function App() {
 
@@ -17,7 +18,7 @@ export default function App() {
 
   
 
-  return<>{inShowSplash ? <SplashScreen/> : <HomeScreen/>}</>;
+  return<>{inShowSplash ? <SplashScreen/> : <Clasificador/>}</>;
 }
 
 const styles = StyleSheet.create({
